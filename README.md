@@ -4,11 +4,11 @@ As a sound design teacher, I had to explain the functioning of AD conversion and
 
 The 'sel' button allows you to select a parameter that can be adjusted using the '+' and '-' button. The row of lights on the left indicate the currently selected parameter. The abbreviations stand for:
 
-sr - sample rate
-bit - bit resolution
-Hz - frequency of the continuous signal
-amp - amplitude of the continuous signal
-phi = phase of the continious signal
+sr - sample rate\
+bit - bit resolution\
+Hz - frequency of the continuous signal\
+amp - amplitude of the continuous signal\
+phi = phase of the continious signal\
 
 Keeping a button pressed will trigger auto-incrementation. 
 

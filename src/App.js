@@ -1,13 +1,19 @@
 import './App.css';
-import Header from './components/Header';
 import Main from './components/Main';
 
 function App() {
+
   return (
-    <>
-    <Header />
-    <Main />
-    </>
+    <div style={{display: "flex", 
+      alignItems: "center", 
+      flexDirection:"column", 
+      justifyContent:"center", 
+      height: "100vh", 
+      width: "100vw",
+      background: "rgb(250,250,250)"
+    }}>
+      <Main />
+    </div>
   );
 }
 

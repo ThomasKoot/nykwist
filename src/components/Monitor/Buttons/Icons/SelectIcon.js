@@ -1,13 +1,12 @@
 import React from 'react';
 import { outlineGrey } from '../../../../state/theme';
-import IconWrapper from './IconWrapper';
 
 function SelectIcon({width, height}) {
 
 	const padding = .3 * height;
 
 	return (
-		<IconWrapper>
+		<>
 			<text 
 				x={padding} 
 				y={height - padding} 
@@ -20,7 +19,7 @@ function SelectIcon({width, height}) {
 					}}>
 					sel
 			</text>
-		</IconWrapper>
+		</>
 	)
 
 }

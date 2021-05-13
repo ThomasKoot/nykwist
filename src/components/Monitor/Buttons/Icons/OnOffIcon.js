@@ -1,10 +1,9 @@
 import React from 'react';
-import IconWrapper from './IconWrapper';
 
 function OnOffIcon({width, height}) {
 
 	return (
-		<IconWrapper>
+		<>
 			<circle 
 				cx={width/2} 
 				cy={height/2} 
@@ -16,7 +15,7 @@ function OnOffIcon({width, height}) {
 				y1={0 + height * .3}
 				y2={height * .7}
 			/>
-		</IconWrapper>
+		</>
 	)
 
 }

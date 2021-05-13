@@ -1,6 +1,5 @@
 import gsap from 'gsap/gsap-core';
 import React, { useEffect, useRef } from 'react';
-import MonitorContainer from '../../styles/MonitorContainer';
 import ButtonsMain from './Buttons/ButtonsMain';
 import OffScreen from './Screen/OffScreen';
 import Outline from './Outline';
@@ -22,11 +21,16 @@ function Container({state, dispatch}) {
 
 
 	return (
-		<MonitorContainer
+		<svg
 			viewBox="-1 -1 102 102" 
 			xmlns="http://www.w3.org/2000/svg"
 			ref={containerRef}
-			style={{visibility: 'hidden'}}
+			style={{
+				visibility: 'hidden',
+				width: '80vw',
+				height: '80vh',
+				zIndex: 2
+			}}
 			>
 			<Outline />
 			<Title />
@@ -36,7 +40,7 @@ function Container({state, dispatch}) {
 			<Screen state={state} />
 			<ButtonsMain state={state} dispatch={dispatch}/>
 			<Logo />
-		</MonitorContainer>
+		</svg>
 	)
 }
 

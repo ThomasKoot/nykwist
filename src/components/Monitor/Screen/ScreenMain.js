@@ -26,7 +26,14 @@ function Screen( {state} ) {
 					frequency={state.frequency}
 					amplitude={state.amplitude}
 					phase={state.phase}/>
-				<SampledWave state={state} />
+				<SampledWave 
+					sampleRate={state.sampleRate} 
+					bitDepth={state.bitDepth}
+					waveshape={state.waveshape} 
+					frequency={state.frequency}
+					amplitude={state.amplitude}
+					phase={state.phase}
+				/>
 			</g>
 		</>
 	)

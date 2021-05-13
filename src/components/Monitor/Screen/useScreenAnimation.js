@@ -1,28 +1,26 @@
 import gsap from 'gsap/gsap-core'
-import { useEffect, useRef } from 'react'
+import { useEffect } from 'react'
 
 function useScreenAnimation(ref, isOn) {
-
-    const isUpdating = useRef(false)
 
     useEffect(() => {
 		gsap.set(ref.current, {
 			transformOrigin: "center",
+			scale: 0
 		})
 	}, [ref])
 
 	useEffect(() => {
-		if (isUpdating.current === false) return
 		if (isOn) {
 			gsap.killTweensOf(ref.current)
 			gsap.to(ref.current, {
 				scaleX: 1,
-				duration: .2,
+				duration: .3,
 			})
 			gsap.to(ref.current, {
 				scaleY: 1,
 				duration: .6,
-				delay: .2
+				delay: .3
 			})
 		} else {
 			gsap.to(ref.current, {
@@ -37,10 +35,6 @@ function useScreenAnimation(ref, isOn) {
 			})
 		}
 	}, [isOn, ref])
-
-	useEffect(() => {
-		isUpdating.current = true
-	}, [])
 
 }
 

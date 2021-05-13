@@ -51,7 +51,6 @@ function ButtonsMain({state, dispatch}) {
 				onClick={() => dispatch({type: "TOGGLE_ON_OFF"})}/>
 		</g>
 	)
-
 }
 
 export default ButtonsMain;

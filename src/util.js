@@ -16,3 +16,13 @@ export function calculateTransform({x, y, width, height, scale, phase}) {
     return `translate(${x + offsetX},${y + offsetY}) scale(${phase * scale + (1-phase)})`
 }
 
+export function generatePolylineString(points) {
+    return points.map(p => p.join(",")).join(" ")
+} 
+    
+export function pipe(val, fns) {
+    return fns.reduce((acc, fn) => {
+        return fn(acc)
+    }, val)
+} 
+

@@ -9,8 +9,6 @@ function ButtonOutline({width, height}) {
 		}
 	}
 
-	console.log(width, height)
-
 	return (
 		<g>
 			<defs>

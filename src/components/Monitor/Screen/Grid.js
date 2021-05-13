@@ -1,6 +1,5 @@
 import React from 'react';
 import { screenSpec } from '../../../state/dimensions';
-import GridLine from '../../../styles/GridLine';
 
 function Grid( {sampleRate, bitDepth} ) {
 
@@ -15,56 +14,53 @@ function Grid( {sampleRate, bitDepth} ) {
 		return lines
 	}
 
-	function generateSampleRateLineSpecs( {xRange, yRange} ) {
-		return function (xArr) {
-			return xArr.map(x => {
-				return ({
-					"x1": x * xRange,
-					"x2": x * xRange,
-					"y1": 0,
-					"y2": yRange,
-					"key": "lineX" + x
-				})
-			})
-		}
+	function generateSampleRateLines(range, xArr) {
+		const { xRange, yRange } = range
+		return xArr.map(x => {
+			return (
+				<line 
+					x1={x * xRange} 
+					x2={x * xRange}
+					y1={0}
+					y2={yRange}
+					key={"lineX" + x}
+				/>
+			)
+		})
 	}
 
-	function generateBitDepthLineSpecs( {xRange, yRange } ) {
-		return function (yArr) {
-			return yArr.map(y => {
-				return [
-					{
-						"x1" : 0,
-						"x2" : xRange,
-						"y1" : (yRange/2) - yRange/2*y,
-						"y2" : (yRange/2) - yRange/2*y,
-						"key" : "yLinePos" + y
-					},{
-						"x1" : 0,
-						"x2" : xRange,
-						"y1" : (yRange/2) + yRange/2*y,
-						"y2" : (yRange/2) + yRange/2*y,
-						"key" : "yLineNeg" + y
-					}
-				]
-			})
-		}
+	function generateBitDepthLines(range, yArr) {
+		const { xRange, yRange } = range
+		return yArr.map(y => {
+			return (
+				<React.Fragment key={"lineY" + y}>
+					<line 
+						x1={0} 
+						x2={xRange}
+						y1={(yRange/2) - yRange/2*y}
+						y2={(yRange/2) - yRange/2*y}
+					/>
+					<line 
+						x1={0} 
+						x2={xRange}
+						y1={(yRange/2) + yRange/2*y}
+						y2={(yRange/2) + yRange/2*y}
+					/>
+				</React.Fragment>
+			)
+		})
 	}
 
 	const xArr = calculateGridLines(sampleRate);
 	const yArr = calculateGridLines(bitDepth / 2);
 
 	return (
-		<g>	
+		<g style={{stroke: 'black', strokeWidth: .05}}>	
 			{
-				generateSampleRateLineSpecs(screenSpec)(xArr).map(spec => {
-					return <GridLine {...spec}/>
-				})
+				generateSampleRateLines(screenSpec, xArr)
 			} 
 			{
-				generateBitDepthLineSpecs(screenSpec)(yArr).map(specs => {
-					return specs.map(spec => <GridLine {...spec} />)
-				})
+				generateBitDepthLines(screenSpec, yArr)
 			}
 		</g>
 	)

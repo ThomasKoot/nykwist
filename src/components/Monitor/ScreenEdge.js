@@ -13,7 +13,7 @@ function ScreenEdge(props) {
 			} fill={'rgb(196,198,185)'}/> 
 			<polyline points={
 				`${xStart},${yStart + yRange} 50,${yStart - 33 + yRange} ${xStart + xRange}, ${yStart + yRange}`
-			} fill={'rgb(196,198,185)'}/> 
+			} fill={'rgb(196,198,186)'}/> 
 		</g>
 	)
 

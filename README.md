@@ -1,6 +1,6 @@
 NYQ is a quirky old CRT monitor that lets you explore the implications of AD conversion using an adjustable sample rate and bit resolution.
 
-View dem: http://thomaskoot-nykwist.s3-website.eu-central-1.amazonaws.com
+live-demo: http://thomaskoot-nykwist.s3-website.eu-central-1.amazonaws.com
 
 As a sound design teacher, I had to explain the functioning of AD conversion and the concepts of the Nyquist frequency and aliasing. In words, this is pretty abstract, so I decided to make an app that visualises the concept. 
 
